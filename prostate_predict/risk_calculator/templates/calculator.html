@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <br>
+    <div style="background-color: rgb(121, 195, 255); text-align: center; width: 900px; margin: 0 auto; border:1px solid black">
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ pred.as_p }}
+        <button type="submit" class="save btn btn-primary">Save</button>
+    </form>
+    </div>
+{% endblock %}
