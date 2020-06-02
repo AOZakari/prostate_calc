@@ -5,7 +5,7 @@ class Person_Input(models.Model):
     brothers = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de frères ")
     sisters = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de soeurs ")
     older_brothers = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de frères plus agés que vous")
-    older_sisters = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de soeurs plus agés que vous")
+    older_sisters = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de soeurs plus agées que vous")
 
     dark_skin = models.BooleanField(verbose_name="Avez-vous une peau noire (origine africaine ou antillaise)")
     past_cancer = models.BooleanField(verbose_name="Avez vous eu un cancer")
@@ -46,26 +46,3 @@ class Person_Input(models.Model):
 
     apparente_one = models.PositiveSmallIntegerField()
     declared_cancers = models.PositiveSmallIntegerField()
-
-"""
-class Person_Results(models.Model):
-    Person_Input = models.OneToOneField(
-        Person_Input,
-        on_delete = models.CASCADE,
-        primary_key=True,
-    )
-
-    psa_andro_corr = models.FloatField()
-    psa_density = models.FloatField()
-    psa_density_corr = models.FloatField()
-    genetic_risk = models.FloatField()
-    family_pertinence = models.FloatField()
-    family_info = models.FloatField()
-    
-    apparente_one = models.PositiveSmallIntegerField()
-
-    irm_to_realise = models.BooleanField()
-    
-    general_pop_risk = models.FloatField()
-    individual_risk = models.FloatField()
-"""
