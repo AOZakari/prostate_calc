@@ -2,19 +2,19 @@ from django.db import models
 
 class Person_Input(models.Model):
     age = models.PositiveSmallIntegerField(verbose_name="Quel est votre Age (ans)")
-    brothers = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de fréres ")
+    brothers = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de frères ")
     sisters = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de soeurs ")
-    older_brothers = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de fréres plus agés que vous")
+    older_brothers = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de frères plus agés que vous")
     older_sisters = models.PositiveSmallIntegerField(verbose_name="Combien avez-vous de soeurs plus agés que vous")
 
     dark_skin = models.BooleanField(verbose_name="Avez-vous une peau noire (origine africaine ou antillaise)")
     past_cancer = models.BooleanField(verbose_name="Avez vous eu un cancer")
     past_breast_cancer = models.BooleanField(verbose_name="Avez vous eu un cancer du sein")
     past_other_cancer = models.BooleanField(verbose_name="Avez-vous eu personnellement un des cancers suivants (Colon ou rectum, melanome, cerveau, estomac)")
-    father_prostate = models.BooleanField(verbose_name="Avez-vous un pére qui a eu un cancer de la prostate")
+    father_prostate = models.BooleanField(verbose_name="Avez-vous un père qui a eu un cancer de la prostate")
     mother_breast = models.BooleanField(verbose_name="Avez-vous un mère qui a eu un cancer du sein")
 
-    brother_prostate =  models.PositiveSmallIntegerField(verbose_name="Combien de vos fréres ont eu un cancer de la prostate")
+    brother_prostate =  models.PositiveSmallIntegerField(verbose_name="Combien de vos frères ont eu un cancer de la prostate")
     sister_prostate =  models.PositiveSmallIntegerField(verbose_name="Combien de vos soeurs ont eu un cancer du sein")
 
     mutation = models.BooleanField(verbose_name="Avez-vous une mutation qui prédispose aux cancers Sein (BRCA1 ou BRCA2, Autres)")
