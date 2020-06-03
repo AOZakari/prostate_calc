@@ -124,4 +124,5 @@ def calculator(request):
             person.individual_risk = (0.6+6.6*person.psa_density_corr)*person.general_pop_risk*person.genetic_risk
             person.save()
             return render(request, 'results.html', {'person': person})
-    raise forms.ValidationError
+        else:
+            return render(request, 'calculator.html', {'pred': pred})
