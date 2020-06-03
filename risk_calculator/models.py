@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Person_Input(models.Model):
     age = models.PositiveSmallIntegerField(verbose_name="Quel est votre Age (ans)")
@@ -19,11 +20,11 @@ class Person_Input(models.Model):
 
     mutation = models.BooleanField(verbose_name="Avez-vous une mutation qui prédispose aux cancers Sein (BRCA1 ou BRCA2, Autres)")
 
-    psa =  models.FloatField(verbose_name="Quel est votre taux de PSA (ng/ml)")
-    volume_prostate = models.FloatField(verbose_name="Quel est votre volume de prostate (cc mesuré en échographie)")
+    psa =  models.FloatField(verbose_name="Quel est votre taux de PSA (ng/ml)", validators=[MinValueValidator(0)])
+    volume_prostate = models.FloatField(verbose_name="Quel est votre volume de prostate (cc mesuré en échographie)", validators=[MinValueValidator(0)])
 
-    weight = models.FloatField(verbose_name="Quels est votre Poids (kg)")
-    height = models.FloatField(verbose_name="Quel est votre Taille (cm)")
+    weight = models.FloatField(verbose_name="Quels est votre Poids (kg)", validators=[MinValueValidator(1)])
+    height = models.FloatField(verbose_name="Quel est votre Taille (cm)", validators=[MinValueValidator(1)])
 
     low_testosterone = models.BooleanField(verbose_name="Votre taux sanguin de testostérone biodisponible est il <0,3 ng/ml")
     sexual_difficulties = models.BooleanField(verbose_name="Avez vous des difficultés sexuels (baisse de la libido ou des difficultés pour avoir des érections satisfaisantes)")
