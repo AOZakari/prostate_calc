@@ -125,4 +125,4 @@ def calculator(request):
             person.save()
             return render(request, 'results.html', {'person': person})
         else:
-            return render(request, 'calculator.html', {'pred': pred})
+            return render(request, 'calculator.html')
